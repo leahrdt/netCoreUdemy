@@ -1,4 +1,5 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
 namespace APIUdemy
@@ -17,6 +18,15 @@ namespace APIUdemy
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+
+            //Configuracion del Connection string, va a ir dentro de AplicationDbContext..
+            services.AddDbContext<AplicationDbContext>(options =>
+                //options.UseSqlServer() indicando que es sql server..
+                //Dentro de esta funcion Configuration.GetConnectionString y ahora si dentro..
+                //El connection string, el cual esta configurado en appsettings.Development.json
+                options.UseSqlServer(Configuration.GetConnectionString("defaultConnection"))
+            );
+
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(c =>
             {
