@@ -5,12 +5,12 @@ using Microsoft.EntityFrameworkCore;
 namespace APIUdemy
 {
     //AplicationDbContext, hereda Siempre de DbContext (se debe importar Microsoft.EntityFrameworkCore)
-    public class AplicationDbContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
         //Constructor, AplicationDbContext(viene de DbContext)...
         //..al cual le puedo pasar distintas configuraciones, ej, el conecction string que apunta a la bd que utilizare.
         //El conecction string se configura en appsettings.Development.json
-        public AplicationDbContext(DbContextOptions options) : base(options)
+        public ApplicationDbContext(DbContextOptions options) : base(options)
         {
         }
         //DbSet(viene de DbContext):

@@ -20,7 +20,7 @@ namespace APIUdemy
             services.AddControllers();
 
             //Configuracion del Connection string, va a ir dentro de AplicationDbContext..
-            services.AddDbContext<AplicationDbContext>(options =>
+            services.AddDbContext<ApplicationDbContext>(options =>
                 //options.UseSqlServer() indicando que es sql server..
                 //Dentro de esta funcion Configuration.GetConnectionString y ahora si dentro..
                 //El connection string, el cual esta configurado en appsettings.Development.json
